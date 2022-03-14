@@ -29,6 +29,8 @@ namespace consoleresize
                     Console.Clear();
                     Console.BackgroundColor=ConsoleColor.Gray;
                     //draw
+
+                    draw.text("sample text");
                     draw.borders(height, width);
                 }
             }
@@ -67,6 +69,19 @@ namespace consoleresize
                 Console.BackgroundColor=ConsoleColor.DarkGray;
                 utils.WriteAt("  ", width-2,i);
             }
+        }
+        public static void text (string text){
+            int lenght = text.Length;
+            int halflenght = lenght/2;
+            int conheight = Console.WindowHeight;
+            int halfheight = conheight/2;
+            int conwidth = Console.WindowWidth;
+            int halfwidth = conwidth/2;
+
+            Console.BackgroundColor=ConsoleColor.Blue;
+            Console.ForegroundColor=ConsoleColor.Black;
+            int curserpos = halfwidth-halflenght;
+            utils.WriteAt(text, curserpos, halfheight);
         }
     }
     class utils{
